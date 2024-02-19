@@ -31,7 +31,7 @@ export async function ambilDaftarProduk() {
   const cuplikankuery = await getDocs(kuery);
   
   let hasil = [];
-  cuplikankuery.getFirestore((dok) => {
+  cuplikankuery.forEach((dok) => {
       hasil.push({ 
      id:dok.id, 
       nama: dok.data().nama,
