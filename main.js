@@ -36,7 +36,7 @@ export async function ambilDaftarProduk() {
      id:dok.id, 
       nama: dok.data().nama,
       harga: dok.data().harga,
-      stok: dok.datq().stok,
+      stok: dok.data().stok,
       });
   });
   
