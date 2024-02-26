@@ -14,13 +14,13 @@
 <body>
   <h1>Daftar Produk</h1>
   
-  <table class="table" id="daftar-ptoduk">
+  <table class="table" id="daftar-produk">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nama Produk</th>
-      <th scope="col">Harga</th>
-      <th scope="col">Stok</th>
+      <th scope="col">nama Produk</th>
+      <th scope="col">harga</th>
+      <th scope="col">stok</th>
     </tr>
   </thead>
   <tbody>
@@ -34,16 +34,18 @@
   $(document).ready(async function() {
    let elementdaftar = $("#daftar-produk > tbody")
    let daftarproduk = await ambilDaftarProduk();
+   let nomor = 1;
    
    daftarproduk.forEach((data) => {
      elementdaftar.append(
        '<tr>' +
-       '<th>' + '</th>'+
+       '<th>' + nomor + '</th>'+
        '<td>' + data.nama+'</td>'+
        '<td>' + data.harga+'</td>'+
        '<td>' + data.stok+'</td>'+
        '</tr>'
        );
+       nomor = nomor +1;
    });
   });
 </script>
