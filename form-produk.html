@@ -35,16 +35,16 @@
   <a href="index.html">lihat daftar produk</a>
 
   <script type="module">
-    import { tamabahproduk } from './main.js';
+    import { tambahproduk } from './main.js';
 
-    let tombolTamabah = document.getElementById('tombol-tamabah');
+    let tombolTamabah = document.getElementById('tombol-tambah');
     let elemenNamaProduk = document.getElementById('input-nama');
     let elemenHarga = document.getElementById('input-harga');
     let elemenstok = document.getElementById('input-stok');
     
     tombolTamabah.addEventListener('click', async function (e){
       e.preventDefault();
-      await tamabahproduk(elemenNamaProduk.value, elemenstok.value);
+      await tambahproduk(elemenNamaProduk.value, elemenstok.value);
       window.location,href = 'index.html';
     });
   </script>
