@@ -35,10 +35,13 @@ export async function ambilDaftarProduk() {
       hasil.push({ 
      id:dok.id, 
       nama: dok.data().nama,
-      harga: dok.data().harga,
+      harga:dok.harga().harga,
       stok: dok.data().stok,
       });
   });
   
   return hasil;
+}
+export function formatangka(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
