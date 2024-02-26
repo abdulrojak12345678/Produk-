@@ -26,7 +26,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function ambilDaftarProduk() {
-  const refDokumen = collection(db,"Produk");
+  const refDokumen = collection(db,"produk");
   const kuery = query(refDokumen,orderBy("nama"));
   const cuplikankuery = await getDocs(kuery);
   
@@ -44,4 +44,17 @@ export async function ambilDaftarProduk() {
 }
 export function formatangka(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+export function tambahproduk(nama, harga, stok) {
+  try {
+    const dokRef = await addDoc(collection(db,'produk'),{
+   nama: nama,
+   harga: harga,
+   stok: stok
+    });
+    console.log('berhasil menambah produk'+ dok )
+  } catch (e) {
+  console.log('Gagal menambah daftar produk' + e);
+  }
 }
