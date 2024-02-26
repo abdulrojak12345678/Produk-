@@ -35,7 +35,7 @@ export async function ambilDaftarProduk() {
       hasil.push({ 
      id:dok.id, 
       nama: dok.data().nama,
-      harga:dok.harga().harga,
+      harga:dok.data().harga,
       stok: dok.data().stok,
       });
   });
@@ -46,7 +46,7 @@ export function formatangka(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-export function tambahproduk(nama, harga, stok) {
+export async function tambahproduk(nama, harga, stok) {
   try {
     const dokRef = await addDoc(collection(db,'produk'),{
    nama: nama,
