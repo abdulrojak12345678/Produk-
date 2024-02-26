@@ -27,6 +27,7 @@
 
   </tbody>
 </table>
+<a href="form-produk.html">Tambah Produk</a>
 
 <script type="module">
   import {ambilDaftarProduk, formatangka} from './main.js';
@@ -41,7 +42,7 @@
        '<tr>' +
        '<th>' + nomor + '</th>'+
        '<td>' + data.nama+'</td>'+
-       '<td>' formatangka (data.harga)'</td>'+
+       '<td>' +formatangka (data.harga)+'</td>'+
        '<td>' + data.stok+'</td>'+
        '</tr>'
        );
