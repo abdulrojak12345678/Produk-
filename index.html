@@ -46,7 +46,9 @@
           '<td>' + data.nama + '</td>' +
           '<td>' + formatangka(data.harga) + '</td>' +
           '<td>' + data.stok + '</td>' +
-          '<td>' + '<button class="btn btn-danger tombol-hapus" data ="' + data.id + '">hapus</button>' + '</td>' +
+          '<td>' + '<button class="btn btn-danger tombol-hapus" data ="' + data.id + '">hapus</button>' + 
+          '<img src="loader.gif" style="width: 1em; display: none" id="' + data.id + '">'+
+          '</td>' +
           '</tr>'
         );
         nomor = nomor + 1;
@@ -55,6 +57,8 @@
       $('#loader').hide();
 
       $('.tombol-hapus').click(async function() {
+        $(this).attr('disebled','disebled');
+        $('#' + $(this).attr('data')).show();
         await hapusProduk($(this).attr('data'));
         location.reload();
       });
