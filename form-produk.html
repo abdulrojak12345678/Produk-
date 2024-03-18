@@ -46,9 +46,9 @@
 
     tombolTamabah.addEventListener('click', async function(e) {
       e.preventDefault();
-      tombolTamabah.setAttribute('disabled','disabled');
+      tombolTamabah.setAttribute('disabled', 'disabled');
       loader.style.display = "block";
-      
+
       await tambahproduk(elemenNamaProduk.value, elemenHarga.value, elemenstok.value);
       window.location, href = 'index.html';
     });
