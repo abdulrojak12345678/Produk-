@@ -58,3 +58,7 @@ export async function tambahproduk(nama, harga, stok) {
   console.log('Gagal menambah daftar produk' + e);
   }
 }
+
+export async function hapusProduk(docId) {
+  await deleteDoc(doc(db,"produk",docId));
+}
